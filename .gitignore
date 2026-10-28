@@ -1,0 +1,36 @@
+# Credentials and environment files
+.env
+.env.*
+!.env.example
+*credentials*
+*password*
+*secret*
+
+# Certificates and private keys
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Wazuh live configurations
+**/internal_users.yml
+**/docker-compose.yml
+wazuh-private-backup/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+
+# Virtual machine images and installers
+*.qcow2
+*.vmdk
+*.vdi
+*.iso
+*.msi
+*.deb
+*.zip
+
+# Editor and OS files
+.DS_Store
+Thumbs.db

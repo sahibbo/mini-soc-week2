@@ -1,0 +1,21 @@
+<group name="labshop,week2,">
+
+  <!-- Detect failed logins except the monitor account -->
+  <rule id="100100" level="5">
+    <decoded_as>labshop</decoded_as>
+    <action>LOGIN_FAILED</action>
+    <user type="pcre2" negate="yes">^monitor$</user>
+    <description>LabShop: Failed login for user $(dstuser) from $(srcip)</description>
+    <group>authentication_failed,</group>
+  </rule>
+<!-- LabShop Brute-Force Detection -->
+<rule id="100101" level="12" frequency="5" timeframe="60">
+  <if_matched_sid>100100</if_matched_sid>
+  <same_srcip />
+  <description>LabShop: Multiple failed logins from the same source IP - Possible brute force</description>
+  <mitre>
+    <id>T1110</id>
+  </mitre>
+  <group>authentication_failures,brute_force,</group>
+</rule>
+</group>

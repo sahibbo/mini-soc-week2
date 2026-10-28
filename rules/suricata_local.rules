@@ -1,0 +1,1 @@
+alert http any any -> $HOME_NET 80 (msg:"LABSHOP: HTTP Admin Path Access Detected"; flow:established,to_server; http.uri; content:"/admin"; startswith; sid:1000001; rev:1;)

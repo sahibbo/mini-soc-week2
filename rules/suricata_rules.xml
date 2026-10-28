@@ -1,0 +1,11 @@
+<group name="labshop,week2,suricata,">
+
+  <!-- Week 2 - Suricata HTTP Admin Alert Escalation -->
+  <rule id="100110" level="12">
+    <if_sid>86601</if_sid>
+    <field name="alert.signature_id">^1000001$</field>
+    <description>LabShop: Suricata HTTP Admin Access - $(src_ip) to $(dest_ip)</description>
+    <group>ids,web_access,</group>
+  </rule>
+
+</group>

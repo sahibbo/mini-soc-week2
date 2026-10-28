@@ -1,0 +1,11 @@
+<!-- Week 2 - LabShop Custom Decoder -->
+
+<decoder name="labshop">
+  <program_name>^labshop$</program_name>
+</decoder>
+
+<decoder name="labshop">
+  <parent>labshop</parent>
+  <regex type="pcre2">^(LOGIN_FAILED|LOGIN_OK) user=([A-Za-z0-9_-]+) src=([0-9.]+)$</regex>
+  <order>action,user,srcip</order>
+</decoder>
